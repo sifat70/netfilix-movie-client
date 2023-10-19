@@ -18,7 +18,7 @@ const AddMovie = () => {
         const photo = form.photo.value;
 
 
-        const newMovie = { name, quantity, supplier, taste, category, details, photo }
+        const newMovie = { _id, name, quantity, supplier, taste, category, details, photo }
         console.log(newMovie);
 
 
@@ -37,7 +37,7 @@ const AddMovie = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'User added successfully',
+                        text: 'Movie added successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
