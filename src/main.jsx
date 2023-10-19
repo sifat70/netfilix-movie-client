@@ -9,12 +9,14 @@ import Main from './components/Main/Main';
 import AddMovie from './components/AddMovie/AddMovie';
 import UpdateMovie from './components/UpdateMovie/UpdateMovie';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import Login from './components/Login/Login';
 
 const router = createBrowserRouter([
   {
     path: "/",
     errorElement: <ErrorPage></ErrorPage>,
     element: <Main></Main>,
+    loader: () => fetch('http://localhost:5000/movie')
   },
   {
     path: "addMovie",
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "updateMovie",
     element: <UpdateMovie></UpdateMovie>
+  },
+  {
+    path: "login",
+    element: <Login></Login>
   }
 ]);
 

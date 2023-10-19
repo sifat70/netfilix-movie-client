@@ -1,10 +1,22 @@
-import { Outlet } from "react-router-dom";
+
+import { useLoaderData } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import MovieCard from "../MovieCard/MovieCard";
 
 
 const Main = () => {
+    const movies = useLoaderData();
     return (
         <div>
-            <Outlet></Outlet>
+            <Header></Header>
+            <h1 className="text-center">New Latest Movie</h1>
+            <div className="grid grid-cols-3 gap-4">
+                {
+                    movies.map(movie => <MovieCard key={movie._id} movie={movie}></MovieCard>)
+                }
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
