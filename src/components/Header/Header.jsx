@@ -1,7 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const navLinks = <>
 
@@ -30,7 +40,27 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <div className="dropdown dropdown-end">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                {
+                                    user ?
+                                        <img src="https://api.brusselstimes.com/wp-content/uploads/2019/05/vddriessche-c-stamp-media.jpg" />
+                                        :
+                                        <img src="https://img.freepik.com/premium-vector/bad-man-liar-wear-good-fake-mask-face-evil-person-concept-graphic-design-illustration_133260-4982.jpg?w=2000" />
+                                }
+                            </div>
+                        </label>
+                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                            {
+                                user ?
+                                    <button onClick={handleSignOut} className="btn">Sign Out</button>
+                                    :
+
+                                    <Link to="/login"><button className="btn w-full">Login</button></Link>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

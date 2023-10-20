@@ -11,6 +11,9 @@ import UpdateMovie from './components/UpdateMovie/UpdateMovie';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Login from './components/Login/Login';
 import MyCart from './components/MyCart/MyCart';
+import Registration from './components/Registration/Registration';
+import AuthProvider from './components/provider/AuthProvider';
+import PrivateRoute from './components/PrivateRoutes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: "updateMovie/:id",
-    element: <UpdateMovie></UpdateMovie>,
+    element: <PrivateRoute><UpdateMovie></UpdateMovie></PrivateRoute>,
     loader: ({params}) => fetch(`http://localhost:5000/movie/${params.id}`)
   },
   {
@@ -35,11 +38,15 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <Login></Login>
+  },
+  {
+    path: "registration",
+    element: <Registration></Registration>
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider><RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>,
 )
