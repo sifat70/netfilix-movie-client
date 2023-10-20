@@ -17,7 +17,7 @@ const Main = () => {
                 <Slider></Slider>
             </div>
             <h1 className="text-center text-4xl font-bold italic mt-8">New Latest Movie</h1>
-            <div className="w-[90%] mx-auto grid grid-cols-3 gap-4 mt-8">
+            <div className="w-[90%] mx-auto grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
                 {
                     movies.map(movie => <MovieCard key={movie._id} movie={movie}></MovieCard>)
                 }
@@ -29,7 +29,7 @@ const Main = () => {
 
             <div className="mt-8 w-[90%] mx-auto">
                 <h1 className="text-center text-4xl font-bold italic mt-8">Our Latest Top Movie</h1>
-                <div className="flex mt-8">
+                <div className="lg:flex mt-8">
                     <div className="flex-1 text-center mt-20">
                         <h1 className="text-3xl text-amber-600 font-bold">Pathan</h1>
                         <p className="font-bold mt-5">Pathaan was theatrically released in India on 25 January 2023, coinciding with the Republic Day weekend.The film received positive reviews from critics, who praised its screenplay, direction, action sequences, music and cast performances</p>
@@ -49,7 +49,7 @@ const Main = () => {
                     <div>
                         <h1 className="text-center text-4xl font-bold italic mt-8">Client Testimonials</h1>
                         <p className="text-center mt-4 font-bold">A customer testimonial is a recommendation of a business, or the quality of a product or service, by a customer.</p>
-                        <div className="flex gap-6 mt-8">
+                        <div className="lg:flex gap-6 mt-8">
                             <div className="flex-1">
                                 <div className="card bg-gray-200 text-primary-content">
                                     <div className="card-body">
