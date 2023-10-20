@@ -30,7 +30,7 @@ const UpdateMovie = () => {
 
         // send to the server
 
-        fetch(`http://localhost:5000/movie/${_id}`, {
+        fetch(`https://netfilix-movie-server-6o6cgyabx-sifat70s-projects.vercel.app/movie/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

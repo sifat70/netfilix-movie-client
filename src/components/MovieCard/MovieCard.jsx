@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { FaStar } from "react-icons/fa";
 
 
 const MovieCard = ({ movie }) => {
@@ -20,7 +21,7 @@ const MovieCard = ({ movie }) => {
         //     if (result.isConfirmed) {
 
 
-        //         fetch(`http://localhost:5000/movie/${_id}`, {
+        //         fetch(`https://netfilix-movie-server-6o6cgyabx-sifat70s-projects.vercel.app/movie/${_id}`, {
         //             method: "DELETE"
         //         })
         //             .then(res => res.json())
@@ -46,13 +47,14 @@ const MovieCard = ({ movie }) => {
                 <h2 className="card-title">
                     {name}
                 </h2>
-                <p>{quantity}</p>
+                <p className="flex items-center">{quantity}<FaStar className="ml-3"></FaStar></p>
+                <p>{details}</p>
                 <div className="card-actions justify-center">
-                    <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
+                    
                         <button className="btn btn-outline btn-accent">View</button>
                         <Link to={`updateMovie/${_id}`}><button className="btn btn-outline btn-accent">Update</button></Link>
                         {/* <button onClick={() => handleDelete(_id)} className="btn btn-outline btn-accent">Delete</button> */}
-                    </div>
+                    
 
                 </div>
             </div>

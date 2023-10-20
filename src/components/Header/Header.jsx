@@ -32,7 +32,7 @@ const Header = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <a className="btn btn-ghost normal-case text-xl"><img className="w-28 h-full" src="https://i.ibb.co/C1bst0N/depositphotos-73179751-stock-illustration-vector-logo-slate-board-for.webp" alt="" /></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

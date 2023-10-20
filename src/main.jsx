@@ -20,16 +20,16 @@ const router = createBrowserRouter([
     path: "/",
     errorElement: <ErrorPage></ErrorPage>,
     element: <Main></Main>,
-    loader: () => fetch('http://localhost:5000/movie')
+    loader: () => fetch('https://netfilix-movie-server-6o6cgyabx-sifat70s-projects.vercel.app/movie')
   },
   {
     path: "addMovie",
-    element: <AddMovie></AddMovie>
+    element: <PrivateRoute><AddMovie></AddMovie></PrivateRoute>
   },
   {
     path: "updateMovie/:id",
     element: <PrivateRoute><UpdateMovie></UpdateMovie></PrivateRoute>,
-    loader: ({params}) => fetch(`http://localhost:5000/movie/${params.id}`)
+    loader: ({params}) => fetch(`https://netfilix-movie-server-6o6cgyabx-sifat70s-projects.vercel.app/movie/${params.id}`)
   },
   {
     path: "myCart",
